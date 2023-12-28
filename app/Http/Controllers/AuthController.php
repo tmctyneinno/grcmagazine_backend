@@ -72,7 +72,7 @@ class AuthController extends Controller
 
      public function userlogin(userlogin $request){
         $user = User::where('email', $request->email)->first();
-        if($user && Hash::check($request->password, $user->password) && $user->user_type == 'User' && $user->confirmed_email == 1 ){
+        if($user && Hash::check($request->password, $user->password) && $user->user_type == 'User' ){
             $token =  $user->createToken('my-app-token')->plainTextToken;
             $user->api_token = $token;
             $user->save();

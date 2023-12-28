@@ -26,7 +26,7 @@ class userlogin extends FormRequest
     {
         return [
             'email'=>'required|email',
-            'password'=>['required', 'string', Password::min(8)->letters()->numbers()->symbols()],
+            'password'=>['required', 'string'],
         ];
     }
 }

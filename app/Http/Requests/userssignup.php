@@ -27,7 +27,7 @@ class userssignup extends FormRequest
             'name'=>'required|regex:/^[a-zA-Z0-9-  ]*$/',
             'email'=>'required|email|unique:users',
             "term"=>'required|in:true',
-            'password'=> ['required', 'confirmed', 'string', Password::min(8)->letters()->numbers()->symbols()],
+            'password'=> ['required', 'confirmed', 'string'],
         ];
     }
 }

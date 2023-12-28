@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::domain('api.grcfincrimetoday.org')->group(function(){ 
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -96,6 +98,6 @@ Route::middleware('auth:sanctum')->group( function(){
     Route::get('/checkads', [PostController::class, 'checkads']);
 
 });
-
+});
 
 
